@@ -90,18 +90,28 @@ string stringReverse(string toReverse)
 {
   stack<char> reverse; //declare the stack
   string newString = "";
-  /*
-    Your code goes here
-  */
+  for(char cr : toReverse){
+    reverse.push(cr);
+  }
+  for(int i=0; i < toReverse.size();i++){
+    newString.push_back(reverse.top());
+    reverse.pop();
+  }
   return newString;
 }
 
 //this function uses a queue to check if a string of parens is properly matched
 bool parenCheck(string toCheck)
 {
-  queue<char> checker; //declare my queue
-  /*
-    Your code goes here
-  */
-  return false; //need a return statement to compile
+  queue<char> checker; //declare my queue (why not use a stack? it seems better here)
+  for(char cr : toCheck){ //can you tell i love for each loops?
+    if(cr == '('){
+      checker.emplace(cr);
+    }else if(cr == ')' && !checker.empty()){
+      checker.pop();
+    }else{
+      return false;
+    }
+  }
+  return checker.empty();
 }
