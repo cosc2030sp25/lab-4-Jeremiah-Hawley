@@ -11,3 +11,5 @@ https://www.w3schools.com/python/python_ref_list.asp - Python List Syntax
 
 https://www.w3schools.com/python/python_ref_string.asp - Python String Syntax
 
+-------------------
+looks great. 10/10
